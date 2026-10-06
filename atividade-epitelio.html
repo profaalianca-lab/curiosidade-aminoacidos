@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Atividade de Fixação – Tecido Epitelial</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f5f5f5;
+        margin: 0;
+        padding: 20px;
+        color: #333;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: auto;
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+        text-align: center;
+        color: #5b3f8c;
+    }
+
+    .subtitulo {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #666;
+    }
+
+    .identificacao {
+        background: #f0ebf7;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 25px;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        padding: 12px;
+        margin-top: 8px;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 16px;
+    }
+
+    .questao {
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .questao h3 {
+        margin-bottom: 15px;
+    }
+
+    .alternativa {
+        display: block;
+        padding: 10px;
+        margin: 6px 0;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+    .alternativa:hover {
+        background: #f1edf6;
+    }
+
+    button {
+        width: 100%;
+        padding: 15px;
+        background: #5b3f8c;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 18px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #46306d;
+    }
+
+    #resultado {
+        display: none;
+        margin-top: 30px;
+        padding: 25px;
+        background: #f0ebf7;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .nota {
+        font-size: 28px;
+        font-weight: bold;
+        color: #5b3f8c;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Atividade de Fixação</h1>
+
+<p class="subtitulo">
+    Tecido Epitelial de Revestimento
+</p>
+
+<div class="identificacao">
+
+<label for="nome">Nome completo:</label>
+<input type="text" id="nome" placeholder="Digite seu nome">
+
+<label for="turma">Turma:</label>
+<input type="text" id="turma" placeholder="Digite sua turma">
+
+</div>
+
+<form id="quiz">
+
+<!-- QUESTÃO 1 -->
+<div class="questao">
+<h3>1. Qual característica é típica do tecido epitelial?</h3>
+
+<label class="alternativa">
+<input type="radio" name="q1" value="A">
+A) Grande quantidade de matriz extracelular
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q1" value="B">
+B) Presença predominante de fibras colágenas
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q1" value="C">
+C) Células muito próximas entre si e pouca matriz extracelular
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q1" value="D">
+D) Células sempre separadas por grandes espaços
+</label>
+</div>
+
+
+<!-- QUESTÃO 2 -->
+<div class="questao">
+<h3>2. Qual é uma das principais funções do tecido epitelial de revestimento?</h3>
+
+<label class="alternativa">
+<input type="radio" name="q2" value="A">
+A) Produzir células sanguíneas
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q2" value="B">
+B) Revestir e proteger superfícies do organismo
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q2" value="C">
+C) Armazenar cálcio
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q2" value="D">
+D) Produzir impulsos nervosos
+</label>
+</div>
+
+
+<!-- QUESTÃO 3 -->
+<div class="questao">
+<h3>3. Um epitélio formado por uma única camada de células achatadas é classificado como:</h3>
+
+<label class="alternativa">
+<input type="radio" name="q3" value="A">
+A) Estratificado cúbico
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q3" value="B">
+B) Simples cúbico
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q3" value="C">
+C) Estratificado pavimentoso
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q3" value="D">
+D) Simples pavimentoso
+</label>
+</div>
+
+
+<!-- QUESTÃO 4 -->
+<div class="questao">
+<h3>4. O epitélio simples cúbico apresenta:</h3>
+
+<label class="alternativa">
+<input type="radio" name="q4" value="A">
+A) Várias camadas de células achatadas
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q4" value="B">
+B) Uma única camada de células aproximadamente cúbicas
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q4" value="C">
+C) Uma única camada de células muito achatadas
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q4" value="D">
+D) Várias camadas de células cúbicas
+</label>
+</div>
+
+
+<!-- QUESTÃO 5 -->
+<div class="questao">
+<h3>5. O epitélio simples cilíndrico é caracterizado por:</h3>
+
+<label class="alternativa">
+<input type="radio" name="q5" value="A">
+A) Uma camada de células mais altas que largas
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q5" value="B">
+B) Várias camadas de células achatadas
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q5" value="C">
+C) Uma camada de células achatadas
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q5" value="D">
+D) Várias camadas de células cilíndricas
+</label>
+</div>
+
+
+<!-- QUESTÃO 6 -->
+<div class="questao">
+<h3>6. A principal diferença entre um epitélio simples e um estratificado está relacionada:</h3>
+
+<label class="alternativa">
+<input type="radio" name="q6" value="A">
+A) À presença de vasos sanguíneos
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q6" value="B">
+B) Ao tamanho do núcleo
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q6" value="C">
+C) Ao número de camadas de células
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q6" value="D">
+D) À quantidade de matriz extracelular
+</label>
+</div>
+
+
+<!-- QUESTÃO 7 -->
+<div class="questao">
+<h3>7. O epitélio pseudoestratificado ciliado é encontrado principalmente:</h3>
+
+<label class="alternativa">
+<input type="radio" name="q7" value="A">
+A) Na epiderme
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q7" value="B">
+B) Nos alvéolos pulmonares
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q7" value="C">
+C) Nas vias respiratórias, como a traqueia
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q7" value="D">
+D) No tecido ósseo
+</label>
+</div>
+
+
+<!-- QUESTÃO 8 -->
+<div class="questao">
+<h3>8. O epitélio de transição é encontrado principalmente:</h3>
+
+<label class="alternativa">
+<input type="radio" name="q8" value="A">
+A) No estômago
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q8" value="B">
+B) Na traqueia
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q8" value="C">
+C) No sistema urinário, especialmente na bexiga
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q8" value="D">
+D) Nos vasos sanguíneos
+</label>
+</div>
+
+
+<!-- QUESTÃO 9 -->
+<div class="questao">
+<h3>9. Nos epitélios estratificados, a classificação quanto à forma das células é baseada principalmente:</h3>
+
+<label class="alternativa">
+<input type="radio" name="q9" value="A">
+A) Nas células da camada basal
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q9" value="B">
+B) Nas células da camada mais superficial
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q9" value="C">
+C) No número de núcleos
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q9" value="D">
+D) Na quantidade de matriz extracelular
+</label>
+</div>
+
+
+<!-- QUESTÃO 10 -->
+<div class="questao">
+<h3>10. O epitélio estratificado pavimentoso apresenta:</h3>
+
+<label class="alternativa">
+<input type="radio" name="q10" value="A">
+A) Uma única camada de células cúbicas
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q10" value="B">
+B) Várias camadas, com células superficiais achatadas
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q10" value="C">
+C) Uma única camada de células cilíndricas
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q10" value="D">
+D) Apenas células arredondadas
+</label>
+</div>
+
+
+<button type="button" onclick="corrigir()">
+Enviar atividade
+</button>
+
+</form>
+
+
+<div id="resultado">
+
+<h2>Resultado</h2>
+
+<p id="mensagem"></p>
+
+<p class="nota" id="nota"></p>
+
+<p>
+A atividade foi finalizada.
+</p>
+
+</div>
+
+</div>
+
+
+<script>
+
+function corrigir() {
+
+    const nome = document.getElementById("nome").value.trim();
+    const turma = document.getElementById("turma").value.trim();
+
+    if (nome === "" || turma === "") {
+        alert("Por favor, preencha seu nome e sua turma antes de enviar.");
+        return;
+    }
+
+    const respostas = {
+        q1: "C",
+        q2: "B",
+        q3: "D",
+        q4: "B",
+        q5: "A",
+        q6: "C",
+        q7: "C",
+        q8: "C",
+        q9: "B",
+        q10: "B"
+    };
+
+    let acertos = 0;
+
+    for (let questao in respostas) {
+
+        const marcada = document.querySelector(
+            'input[name="' + questao + '"]:checked'
+        );
+
+        if (marcada && marcada.value === respostas[questao]) {
+            acertos++;
+        }
+    }
+
+    const nota = (acertos / 10).toFixed(1);
+
+    document.getElementById("mensagem").innerHTML =
+        "<strong>" + nome + "</strong>, você acertou <strong>" +
+        acertos + " de 10 questões.</strong>";
+
+    document.getElementById("nota").innerHTML =
+        "Nota: " + nota + " / 1,0";
+
+    document.getElementById("resultado").style.display = "block";
+
+    window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: "smooth"
+    });
+}
+
+</script>
+
+</body>
+</html>
