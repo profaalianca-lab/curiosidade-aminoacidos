@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Atividade de Fixação - Ácidos Nucleicos, Lipídios e Lipoproteínas</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f6f8;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 5px;
+    }
+
+    .subtitulo {
+      text-align: center;
+      color: #666;
+      margin-bottom: 30px;
+      font-size: 17px;
+    }
+
+    .instrucoes {
+      background: #f8f9fa;
+      border-radius: 10px;
+      padding: 18px;
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+
+    .identificacao {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 25px;
+    }
+
+    .identificacao label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    .identificacao input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    .secao {
+      background: #34495e;
+      color: white;
+      padding: 12px 15px;
+      border-radius: 8px;
+      margin: 35px 0 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .questao {
+      margin-bottom: 25px;
+      padding: 20px;
+      border: 1px solid #e1e5e8;
+      border-radius: 12px;
+      background: #fff;
+    }
+
+    .questao h3 {
+      margin-top: 0;
+      color: #34495e;
+      line-height: 1.5;
+      font-size: 17px;
+      font-weight: 600;
+    }
+
+    .alternativa {
+      display: block;
+      padding: 11px;
+      margin: 7px 0;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .alternativa:hover {
+      background: #f0f3f5;
+    }
+
+    .alternativa input {
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      background: #34495e;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 30px;
+    }
+
+    button:hover {
+      background: #2c3e50;
+    }
+
+    #resultado {
+      display: none;
+      margin-top: 30px;
+      padding: 30px;
+      border-radius: 12px;
+      background: #f8f9fa;
+      text-align: center;
+    }
+
+    #resultado h2 {
+      margin-top: 0;
+      color: #2c3e50;
+    }
+
+    .acertos {
+      font-size: 32px;
+      font-weight: bold;
+      color: #34495e;
+      margin: 20px 0;
+    }
+
+    .mensagem {
+      font-size: 17px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 600px) {
+
+      body {
+        padding: 10px;
+      }
+
+      .container {
+        padding: 18px;
+      }
+
+      .questao {
+        padding: 15px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>Atividade de Fixação</h1>
+
+  <div class="subtitulo">
+    Ácidos Nucleicos, Lipídios e Lipoproteínas
+  </div>
+
+  <div class="instrucoes">
+    <strong>Instruções:</strong><br>
+    Leia atentamente cada questão e assinale apenas uma alternativa.
+    Ao finalizar, confira seu resultado.
+  </div>
+
+  <div class="identificacao">
+
+    <label for="nome">
+      Nome do aluno:
+    </label>
+
+    <input
+      type="text"
+      id="nome"
+      placeholder="Digite seu nome completo"
+    >
+
+  </div>
+
+
+  <!-- ÁCIDOS NUCLEICOS -->
+
+  <div class="secao">
+    Ácidos Nucleicos
+  </div>
+
+
+  <div class="questao" data-resposta="C">
+
+    <h3>
+      1. Os ácidos nucleicos são moléculas fundamentais para o funcionamento celular.
+      Qual alternativa apresenta corretamente os dois principais tipos de ácidos nucleicos?
+    </h3>
+
+    <label class="alternativa">
+      <input type="radio" name="q1" value="A">
+      (A) DNA e proteínas
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q1" value="B">
+      (B) RNA e lipídios
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q1" value="C">
+      (C) DNA e RNA
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q1" value="D">
+      (D) DNA e glicogênio
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q1" value="E">
+      (E) RNA e colesterol
+    </label>
+
+  </div>
+
+
+  <div class="questao" data-resposta="B">
+
+    <h3>
+      2. Um estudante observa a estrutura de um nucleotídeo e precisa identificar seus componentes.
+      Um nucleotídeo é formado por:
+    </h3>
+
+    <label class="alternativa">
+      <input type="radio" name="q2" value="A">
+      (A) aminoácido, fosfato e base nitrogenada
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q2" value="B">
+      (B) açúcar, fosfato e base nitrogenada
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q2" value="C">
+      (C) glicose, fosfato e aminoácido
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q2" value="D">
+      (D) açúcar, aminoácido e lipídio
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q2" value="E">
+      (E) base nitrogenada, colesterol e fosfato
+    </label>
+
+  </div>
+
+
+  <div class="questao" data-resposta="C">
+
+    <h3>
+      3. Sobre o DNA e o RNA, assinale a alternativa correta:
+    </h3>
+
+    <label class="alternativa">
+      <input type="radio" name="q3" value="A">
+      (A) O DNA possui ribose e o RNA possui desoxirribose.
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q3" value="B">
+      (B) DNA e RNA possuem exatamente as mesmas bases nitrogenadas.
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q3" value="C">
+      (C) O DNA apresenta desoxirribose, enquanto o RNA apresenta ribose.
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q3" value="D">
+      (D) O RNA é encontrado exclusivamente no núcleo.
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q3" value="E">
+      (E) O DNA possui uracila como uma de suas principais bases nitrogenadas.
+    </label>
+
+  </div>
+
+
+  <div class="questao" data-resposta="B">
+
+    <h3>
+      4. Durante uma aula, um aluno aprende que o DNA armazena informações necessárias
+      para a célula e que essas informações podem ser utilizadas na produção de proteínas.
+      Nesse processo, o RNA atua principalmente:
+    </h3>
+
+    <label class="alternativa">
+      <input type="radio" name="q4" value="A">
+      (A) como reserva energética da célula.
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q4" value="B">
+      (B) na participação da expressão da informação genética.
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q4" value="C">
+      (C) como principal componente da membrana plasmática.
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q4" value="D">
+      (D) na digestão dos lipídios.
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q4" value="E">
+      (E) no armazenamento de triglicerídeos.
+    </label>
+
+  </div>
+
+
+  <div class="questao" data-resposta="A">
+
+    <h3>
+      5. As bases nitrogenadas presentes nos ácidos nucleicos podem ser classificadas
+      em purinas e pirimidinas. Qual alternativa apresenta apenas bases nitrogenadas do DNA?
+    </h3>
+
+    <label class="alternativa">
+      <input type="radio" name="q5" value="A">
+      (A) Adenina, timina, citosina e guanina
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q5" value="B">
+      (B) Adenina, uracila, citosina e guanina
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q5" value="C">
+      (C) Timina, uracila, citosina e guanina
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q5" value="D">
+      (D) Adenina, timina, uracila e guanina
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q5" value="E">
+      (E) Adenina, timina, citosina e uracila
+    </label>
+
+  </div>
+
+
+  <!-- LIPÍDIOS -->
+
+  <div class="secao">
+    Lipídios
+  </div>
+
+
+  <div class="questao" data-resposta="B">
+
+    <h3>
+      6. Os lipídios apresentam diversas funções no organismo.
+      Qual alternativa apresenta uma função importante dos lipídios?
+    </h3>
+
+    <label class="alternativa">
+      <input type="radio" name="q6" value="A">
+      (A) Atuar exclusivamente como material genético.
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q6" value="B">
+      (B) Participar do armazenamento de energia e da composição das membranas celulares.
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q6" value="C">
+      (C) Ser a principal molécula responsável pela síntese de DNA.
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q6" value="D">
+      (D) Atuar exclusivamente como enzimas.
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q6" value="E">
+      (E) Formar apenas estruturas presentes no núcleo celular.
+    </label>
+
+  </div>
+
+
+  <div class="questao" data-resposta="C">
+
+    <h3>
+      7. Os ácidos graxos podem apresentar diferentes graus de saturação.
+      Em relação à estrutura dessas moléculas, é correto afirmar que:
+    </h3>
+
+    <label class="alternativa">
+      <input type="radio" name="q7" value="A">
+      (A) Ácidos graxos saturados possuem uma ou mais ligações duplas entre carbonos.
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q7" value="B">
+      (B) Ácidos graxos insaturados não possuem carbono em sua estrutura.
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q7" value="C">
+      (C) Ácidos graxos saturados não apresentam ligações duplas entre carbonos da cadeia.
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q7" value="D">
+      (D) Todos os ácidos graxos apresentam exatamente o mesmo grau de saturação.
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q7" value="E">
+      (E) A presença de ligações duplas não interfere nas propriedades físicas dos lipídios.
+    </label>
+
+  </div>
+
+
+  <div class="questao" data-resposta="B">
+
+    <h3>
+      8. Uma pessoa utiliza uma substância rica em fosfolipídios para explicar
+      a estrutura da membrana plasmática. Os fosfolipídios são importantes para a membrana porque:
+    </h3>
+
+    <label class="alternativa">
+      <input type="radio" name="q8" value="A">
+      (A) apresentam apenas uma região hidrofóbica.
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q8" value="B">
+      (B) apresentam regiões hidrofílicas e hidrofóbicas, favorecendo a formação da bicamada.
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q8" value="C">
+      (C) são formados exclusivamente por aminoácidos.
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q8" value="D">
+      (D) são completamente solúveis em água.
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q8" value="E">
+      (E) são encontrados somente no tecido adiposo.
+    </label>
+
+  </div>
+
+
+  <div class="questao" data-resposta="A">
+
+    <h3>
+      9. O colesterol é um lipídio do grupo dos esteróis e desempenha funções importantes
+      no organismo. Entre elas, podemos destacar:
+    </h3>
+
+    <label class="alternativa">
+      <input type="radio" name="q9" value="A">
+      (A) Participação na estrutura das membranas e como precursor de alguns hormônios esteroides.
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q9" value="B">
+      (B) Armazenamento da informação genética.
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q9" value="C">
+      (C) Formação direta dos ribossomos.
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q9" value="D">
+      (D) Transporte de oxigênio no sangue.
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q9" value="E">
+      (E) Produção exclusiva de glicose no fígado.
+    </label>
+
+  </div>
+
+
+  <div class="questao" data-resposta="C">
+
+    <h3>
+      10. Durante a digestão, as gorduras presentes no alimento precisam ser processadas
+      para facilitar a ação das enzimas. A bile contribui para esse processo principalmente por:
+    </h3>
+
+    <label class="alternativa">
+      <input type="radio" name="q10" value="A">
+      (A) Digerir diretamente os triglicerídeos.
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q10" value="B">
+      (B) Transformar lipídios em aminoácidos.
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q10" value="C">
+      (C) Emulsificar as gorduras, aumentando a superfície disponível para ação das lipases.
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q10" value="D">
+      (D) Converter colesterol em glicose.
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q10" value="E">
+      (E) Transportar os lipídios diretamente para o núcleo das células.
+    </label>
+
+  </div>
+
+
+  <!-- LIPOPROTEÍNAS -->
+
+  <div class="secao">
+    Lipoproteínas
+  </div>
+
+
+  <div class="questao" data-resposta="C">
+
+    <h3>
+      11. Os lipídios são pouco solúveis em água. Por isso, no sangue, precisam ser
+      transportados associados a proteínas e outros lipídios, formando:
+    </h3>
+
+    <label class="alternativa">
+      <input type="radio" name="q11" value="A">
+      (A) Nucleotídeos
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q11" value="B">
+      (B) Enzimas
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q11" value="C">
+      (C) Lipoproteínas
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q11" value="D">
+      (D) Glicoproteínas exclusivamente
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q11" value="E">
+      (E) Aminoácidos
+    </label>
+
+  </div>
+
+
+  <div class="questao" data-resposta="A">
+
+    <h3>
+      12. As lipoproteínas apresentam uma estrutura que permite o transporte de lipídios
+      no sangue. De maneira geral, sua parte mais externa apresenta componentes que
+      interagem com a água, enquanto o interior é mais rico em lipídios hidrofóbicos.
+      Essa organização permite:
+    </h3>
+
+    <label class="alternativa">
+      <input type="radio" name="q12" value="A">
+      (A) Que os lipídios sejam transportados no meio aquoso do sangue.
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q12" value="B">
+      (B) Que os lipídios sejam transformados em proteínas.
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q12" value="C">
+      (C) Que o colesterol deixe de ser um lipídio.
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q12" value="D">
+      (D) Que os triglicerídeos sejam armazenados no núcleo celular.
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q12" value="E">
+      (E) Que as lipoproteínas sejam insolúveis no sangue.
+    </label>
+
+  </div>
+
+
+  <div class="questao" data-resposta="C">
+
+    <h3>
+      13. Após uma refeição rica em gordura, os lipídios provenientes da alimentação
+      precisam ser transportados para diferentes tecidos. Qual lipoproteína está
+      principalmente relacionada ao transporte de triglicerídeos provenientes da dieta?
+    </h3>
+
+    <label class="alternativa">
+      <input type="radio" name="q13" value="A">
+      (A) HDL
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q13" value="B">
+      (B) LDL
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q13" value="C">
+      (C) Quilomícron
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q13" value="D">
+      (D) Albumina
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q13" value="E">
+      (E) VLDL
+    </label>
+
+  </div>
+
+
+  <div class="questao" data-resposta="A">
+
+    <h3>
+      14. O LDL é frequentemente chamado de “colesterol ruim”.
+      Embora essa denominação seja simplificada, sua principal função está relacionada:
+    </h3>
+
+    <label class="alternativa">
+      <input type="radio" name="q14" value="A">
+      (A) Ao transporte de colesterol do fígado para os tecidos periféricos.
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q14" value="B">
+      (B) Ao transporte de colesterol dos tecidos diretamente para o intestino.
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q14" value="C">
+      (C) Ao transporte exclusivo de triglicerídeos da dieta.
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q14" value="D">
+      (D) À digestão dos lipídios no intestino.
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q14" value="E">
+      (E) À produção de ácidos nucleicos.
+    </label>
+
+  </div>
+
+
+  <div class="questao" data-resposta="A">
+
+    <h3>
+      15. O HDL é conhecido popularmente como “colesterol bom”.
+      Uma de suas principais funções é participar do transporte reverso do colesterol,
+      contribuindo para:
+    </h3>
+
+    <label class="alternativa">
+      <input type="radio" name="q15" value="A">
+      (A) Levar colesterol dos tecidos de volta ao fígado.
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q15" value="B">
+      (B) Transportar triglicerídeos da dieta para o intestino.
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q15" value="C">
+      (C) Produzir diretamente os ácidos graxos.
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q15" value="D">
+      (D) Transportar DNA pelo sangue.
+    </label>
+
+    <label class="alternativa">
+      <input type="radio" name="q15" value="E">
+      (E) Transformar colesterol em proteína.
+    </label>
+
+  </div>
+
+
+  <button onclick="corrigir()">
+    FINALIZAR ATIVIDADE
+  </button>
+
+
+  <!-- RESULTADO -->
+
+  <div id="resultado">
+
+    <h2>Atividade finalizada!</h2>
+
+    <p id="nomeResultado"></p>
+
+    <div class="acertos" id="acertos"></div>
+
+    <div class="mensagem" id="mensagem"></div>
+
+  </div>
+
+</div>
+
+
+<script>
+
+function corrigir() {
+
+  const nome = document.getElementById("nome").value.trim();
+
+  if (nome === "") {
+
+    alert("Por favor, digite seu nome antes de finalizar a atividade.");
+
+    return;
+
+  }
+
+
+  const questoes = document.querySelectorAll(".questao");
+
+  let acertos = 0;
+
+
+  questoes.forEach((questao, index) => {
+
+    const numero = index + 1;
+
+    const respostaCorreta = questao.dataset.resposta;
+
+    const selecionada = document.querySelector(
+      'input[name="q' + numero + '"]:checked'
+    );
+
+
+    if (selecionada && selecionada.value === respostaCorreta) {
+
+      acertos++;
+
+    }
+
+  });
+
+
+  document.getElementById("nomeResultado").innerHTML =
+    "<strong>Aluno(a):</strong> " + nome;
+
+
+  document.getElementById("acertos").innerHTML =
+    acertos + " acerto" + (acertos !== 1 ? "s" : "") + " de 15";
+
+
+  let mensagem = "";
+
+  if (acertos === 15) {
+
+    mensagem = "Excelente! Você acertou todas as questões.";
+
+  } else if (acertos >= 12) {
+
+    mensagem = "Muito bom! Você apresentou um ótimo desempenho.";
+
+  } else if (acertos >= 9) {
+
+    mensagem = "Bom desempenho! Revise os conteúdos para consolidar seus conhecimentos.";
+
+  } else {
+
+    mensagem = "Revise os conteúdos trabalhados e tente novamente.";
+
+  }
+
+
+  document.getElementById("mensagem").innerHTML = mensagem;
+
+
+  document.getElementById("resultado").style.display = "block";
+
+
+  window.scrollTo({
+
+    top: document.getElementById("resultado").offsetTop - 20,
+
+    behavior: "smooth"
+
+  });
+
+}
+
+</script>
+
+</body>
+</html>
