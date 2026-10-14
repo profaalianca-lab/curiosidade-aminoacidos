@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atividade de Fixação — Citoesqueleto</title>
+<style>
+:root{--ink:#202938;--muted:#667085;--line:#dfe5ec;--accent:#3659a2;--bg:#f4f6fa;--card:#fff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Arial,Helvetica,sans-serif}
+header{background:#243b67;color:white;padding:28px 18px}
+header .wrap,main{max-width:850px;margin:auto}
+.eyebrow{font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;opacity:.85}
+h1{margin:.35rem 0;font-size:clamp(1.55rem,4vw,2.2rem)}
+header p{margin:.3rem 0 0;color:#e6ecf8}
+main{padding:22px 14px 42px}
+.intro,.question,.result{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:14px}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+label.field{display:block;font-weight:600;font-size:.9rem}
+input[type=text]{display:block;width:100%;padding:11px 12px;border:1px solid #cbd5e1;border-radius:8px;font:inherit;margin-top:5px}
+.question h2{font-size:1.03rem;margin:0 0 12px}
+.options{display:grid;gap:9px}
+.option{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border:1px solid var(--line);border-radius:9px;cursor:pointer}
+.option:hover{background:#f7f9fc}
+.option input{margin-top:5px;accent-color:var(--accent)}
+button{border:0;border-radius:9px;padding:12px 18px;font:700 1rem Arial;cursor:pointer}
+.primary{background:var(--accent);color:#fff}
+.secondary{background:#e8edf5;color:#243b67}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+.result{display:none}
+.score{font-size:1.8rem;font-weight:800;color:var(--accent)}
+.small{font-size:.88rem;color:var(--muted)}
+footer{text-align:center;color:var(--muted);font-size:.85rem;padding:0 16px 24px}
+@media(max-width:600px){.fields{grid-template-columns:1fr}.intro,.question,.result{padding:15px}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<div class="eyebrow">Atividade de fixação</div>
+<h1>Citoesqueleto</h1>
+<p>Microfilamentos, microtúbulos e filamentos intermediários</p>
+</div></header>
+<main>
+<section class="intro">
+<p>Leia cada questão e selecione apenas uma alternativa. Ao finalizar, você verá sua pontuação.</p>
+<div class="fields">
+<label class="field">Nome do(a) estudante
+<input id="studentName" type="text" autocomplete="name" placeholder="Digite seu nome">
+</label>
+<label class="field">Turma
+<input id="studentClass" type="text" placeholder="Digite sua turma">
+</label>
+</div>
+</section>
+<form id="quiz">
+<div id="questions"></div>
+<div class="actions">
+<button class="primary" type="submit">Finalizar atividade</button>
+<button class="secondary" type="button" id="reset">Limpar respostas</button>
+</div>
+</form>
+<section id="result" class="result" aria-live="polite">
+<h2>Atividade concluída!</h2>
+<div id="score" class="score"></div>
+<p id="message"></p>
+<p class="small">A tela apresenta somente a pontuação, sem mostrar o gabarito.</p>
+<button class="secondary" type="button" id="print">Imprimir resultado</button>
+</section>
+</main>
+<footer>Atividade de revisão de conteúdo • Citoesqueleto</footer>
+<script>
+const items = [
+{q:"Qual é a principal proteína que forma os microfilamentos?",a:["Tubulina","Queratina","Actina","Desmina"],c:2},
+{q:"Qual é o diâmetro aproximado dos microfilamentos de actina?",a:["8 nm","10 nm","25 nm","50 nm"],c:0},
+{q:"Os microtúbulos são formados por:",a:["Monômeros de actina","Dímeros de tubulina α e β","Moléculas de queratina","Dímeros de miosina"],c:1},
+{q:"Qual estrutura do citoesqueleto participa diretamente da formação do fuso mitótico?",a:["Microfilamentos","Filamentos intermediários","Microtúbulos","Lâmina nuclear exclusivamente"],c:2},
+{q:"Qual proteína motora está associada ao deslocamento sobre filamentos de actina?",a:["Miosina","Cinesina","Dineína","Tubulina"],c:0},
+{q:"Qual alternativa apresenta uma função dos filamentos intermediários?",a:["Produzir ATP","Sintetizar proteínas","Conferir resistência mecânica às células","Formar diretamente os ribossomos"],c:2},
+{q:"As queratinas são exemplos de:",a:["Microtúbulos","Filamentos intermediários","Microfilamentos","Proteínas motoras"],c:1},
+{q:"A desmina é especialmente importante para a organização de células:",a:["Musculares","Epiteliais ciliadas apenas","Sanguíneas sem núcleo","Vegetais"],c:0},
+{q:"As laminas estão relacionadas principalmente à estrutura do(a):",a:["Membrana plasmática","Envoltório nuclear","Complexo de Golgi","Lisossomo"],c:1},
+{q:"Qual afirmação sobre os filamentos intermediários está correta?",a:["São formados por tubulina e têm cerca de 25 nm","São estruturas ocas que formam cílios","São constituídos por actina e atuam na citocinese","Em geral, são mais estáveis e não apresentam polaridade típica"],c:3}
+];
+const letters=["A","B","C","D"];
+const container=document.getElementById("questions");
+items.forEach((item,i)=>{
+ const section=document.createElement("section");
+ section.className="question";
+ section.innerHTML=`<h2>${i+1}. ${item.q}</h2><div class="options">${item.a.map((answer,j)=>`<label class="option"><input type="radio" name="q${i}" value="${j}" required><span><strong>${letters[j]})</strong> ${answer}</span></label>`).join("")}</div>`;
+ container.appendChild(section);
+});
+const form=document.getElementById("quiz");
+form.addEventListener("submit",e=>{
+ e.preventDefault();
+ const unanswered=items.findIndex((_,i)=>!form.querySelector(`input[name="q${i}"]:checked`));
+ if(unanswered!==-1){alert(`Responda à questão ${unanswered+1} antes de finalizar.`);document.querySelectorAll(".question")[unanswered].scrollIntoView({behavior:"smooth",block:"center"});return;}
+ let correct=0;
+ items.forEach((item,i)=>{if(Number(form.querySelector(`input[name="q${i}"]:checked`).value)===item.c)correct++;});
+ const pct=Math.round(correct/items.length*100);
+ document.getElementById("score").textContent=`${correct} de ${items.length} pontos (${pct}%)`;
+ const name=document.getElementById("studentName").value.trim();
+ document.getElementById("message").textContent=(name?`${name}, `:"")+ (pct>=70?"bom trabalho! Continue revisando o conteúdo.":"revise o conteúdo e retome os conceitos estudados.");
+ document.getElementById("result").style.display="block";
+ document.getElementById("result").scrollIntoView({behavior:"smooth",block:"start"});
+});
+document.getElementById("reset").addEventListener("click",()=>{
+ form.reset();document.getElementById("result").style.display="none";window.scrollTo({top:0,behavior:"smooth"});
+});
+document.getElementById("print").addEventListener("click",()=>window.print());
+</script>
+</body>
+</html>
