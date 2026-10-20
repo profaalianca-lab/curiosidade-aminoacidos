@@ -1,1 +1,141 @@
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Desafio do Tecido Ósseo</title>
+<style>
+body{margin:0;background:#f4f7fb;color:#203047;font:16px/1.5 Arial,sans-serif}
+main{max-width:800px;margin:auto;padding:20px}
+header{background:#315c9b;color:white;padding:24px;border-radius:15px}
+h1{margin-top:0}
+.question{background:white;border:1px solid #dce4ef;border-radius:12px;padding:18px;margin:15px 0}
+.question h2{font-size:18px}
+label{display:block;padding:10px;margin:6px 0;border:1px solid #dce4ef;border-radius:8px;cursor:pointer}
+label:hover{background:#e8effa}
+button{padding:12px 18px;border:0;border-radius:8px;cursor:pointer;font-size:16px;margin:5px}
+.primary{background:#315c9b;color:white}
+.feedback{display:none;padding:12px;margin-top:10px;border-radius:8px}
+.correct{background:#e4f6e9}
+.incorrect{background:#fff0ed}
+#result{display:none;background:white;padding:20px;border-radius:12px;margin-top:20px}
+</style>
+</head>
+<body>
+<main>
+<header>
+<h1>🦴 Desafio do Tecido Ósseo</h1>
+<p>Revise as células ósseas, a matriz, o periósteo, a ossificação e a remodelação.</p>
+<p>10 questões • Múltipla escolha</p>
+</header>
+
+<form id="quiz"></form>
+
+<button class="primary" type="button" onclick="corrigir()">Conferir respostas</button>
+<button type="button" onclick="location.reload()">Refazer atividade</button>
+
+<section id="result"></section>
+</main>
+
+<script>
+const questoes = [
+{
+p:"1. Qual célula é responsável pela síntese da matriz óssea?",
+a:["Osteoclasto","Osteoblasto","Osteócito","Condroblasto","Fibroblasto"],
+c:1,
+e:"O osteoblasto produz a matriz orgânica do tecido ósseo."
+},
+{
+p:"2. Qual é a principal função dos osteoclastos?",
+a:["Produzir colágeno","Manter a matriz óssea","Reabsorver o tecido ósseo","Produzir cartilagem","Formar fibras elásticas"],
+c:2,
+e:"Os osteoclastos participam da reabsorção óssea."
+},
+{
+p:"3. Os osteócitos são células que:",
+a:["Mantêm a matriz óssea e ficam em lacunas","Produzem queratina","Reabsorvem intensamente o osso","Formam cartilagem","Estão apenas no periósteo"],
+c:0,
+e:"Os osteócitos são células maduras localizadas em lacunas da matriz óssea."
+},
+{
+p:"4. Qual componente contribui principalmente para a dureza do tecido ósseo?",
+a:["Fibras elásticas","Queratina","Glicogênio","Sais minerais, como a hidroxiapatita","Água"],
+c:3,
+e:"Os sais minerais conferem dureza e resistência à compressão ao osso."
+},
+{
+p:"5. Qual é a função das fibras de Sharpey?",
+a:["Produzir cartilagem","Fixar o periósteo ao osso","Formar osteoclastos","Reabsorver a matriz","Revestir os osteócitos"],
+c:1,
+e:"São feixes de colágeno que penetram no osso e ajudam a fixar o periósteo."
+},
+{
+p:"6. A camada profunda do periósteo apresenta:",
+a:["Somente adipócitos","Epitélio simples","Células osteoprogenitoras","Apenas osteoclastos","Cartilagem elástica"],
+c:2,
+e:"As células osteoprogenitoras podem se diferenciar em osteoblastos."
+},
+{
+p:"7. Na ossificação intramembranosa, o tecido ósseo se forma:",
+a:["Diretamente a partir do tecido mesenquimal","Sempre a partir de cartilagem","A partir do tecido epitelial","Somente após fraturas","Apenas na medula óssea"],
+c:0,
+e:"A ossificação intramembranosa ocorre sem um molde cartilaginoso prévio."
+},
+{
+p:"8. A ossificação endocondral ocorre por meio:",
+a:["Da transformação do osso em cartilagem","Da substituição de um molde de cartilagem hialina por osso","Da transformação de osteócitos em osteoclastos","Apenas nos ossos do crânio","Da remodelação exclusivamente"],
+c:1,
+e:"Na ossificação endocondral, um molde de cartilagem hialina é substituído por tecido ósseo."
+},
+{
+p:"9. O que caracteriza a remodelação óssea?",
+a:["Ocorre apenas na infância","Transforma osso em cartilagem","Forma o esqueleto sem reabsorção","Combina reabsorção e formação de tecido ósseo","Ocorre apenas no periósteo"],
+c:3,
+e:"Os osteoclastos reabsorvem o tecido e os osteoblastos formam matriz nova."
+},
+{
+p:"10. Qual é uma função da remodelação óssea?",
+a:["Impedir mudanças no osso","Eliminar a necessidade de cálcio","Renovar o tecido e contribuir para a adaptação mecânica e o equilíbrio mineral","Substituir todos os osteócitos","Transformar o periósteo em cartilagem"],
+c:2,
+e:"A remodelação contribui para a resistência óssea, a adaptação às cargas e a homeostase mineral."
+}
+];
+
+const letras=["A","B","C","D","E"];
+const quiz=document.getElementById("quiz");
+
+questoes.forEach((q,i)=>{
+ let html=`<section class="question"><h2>${q.p}</h2>`;
+ q.a.forEach((alt,j)=>{
+  html+=`<label><input type="radio" name="q${i}" value="${j}"> ${letras[j]}) ${alt}</label>`;
+ });
+ html+=`<div class="feedback" id="f${i}"></div></section>`;
+ quiz.innerHTML+=html;
+});
+
+function corrigir(){
+ let pontos=0;
+ questoes.forEach((q,i)=>{
+  const resposta=document.querySelector(`input[name="q${i}"]:checked`);
+  const feedback=document.getElementById("f"+i);
+  feedback.style.display="block";
+  if(resposta && Number(resposta.value)===q.c){
+   pontos++;
+   feedback.className="feedback correct";
+   feedback.innerHTML="<strong>Correto!</strong> "+q.e;
+  }else{
+   feedback.className="feedback incorrect";
+   feedback.innerHTML="<strong>Resposta correta: "+letras[q.c]+") "+q.a[q.c]+".</strong> "+q.e;
+  }
+ });
+ const resultado=document.getElementById("result");
+ resultado.style.display="block";
+ resultado.innerHTML=`<h2>Resultado: ${pontos}/10 (${pontos*10}%)</h2>
+ <p>${pontos>=9?"Excelente!":pontos>=7?"Muito bem!":"Revise os conceitos e tente novamente."}</p>`;
+ resultado.scrollIntoView({behavior:"smooth"});
+}
+</script>
+</body>
+</html>
+
